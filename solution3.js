@@ -1,13 +1,20 @@
 function identifyPrime(nums) {
+    // We create a function identifyPrime(nums) to check whether a given number is prime or not
+
     if (nums <= 1) {
         return false;
     }
+    // prime numbers are 2 and others odd numbers whose only factors are one and itself.
+    // nums <= 1 return false if input number is less than 1 or equal to it as one is not a prime number 
     if (nums <= 3) {
         return true;
     }
+    // nums <= 3 return true if input is equal to or less than three i.e 2 and 3 
     if (nums % 2 === 0 || nums % 3 === 0) {
         return false;
     }
+    // nums % 2 === 0 || nums % 3 === 0 return false if number is divisible by three and two
+
 
     let i = 5;
     while (i * i <= nums) {
@@ -20,25 +27,18 @@ function identifyPrime(nums) {
     return true;
 }
 
-function filterByPrime(arr) {
-    return arr.filter(identifyPrime);
+function filterByPrime(array) {
+    // function filterByPrime takes an array of numbers as input and returns the new array of prime numbers
+    return array.filter(identifyPrime);
 }
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// numbers is a variable representing an array declared by const keyword
 
 const primeNum = filterByPrime(numbers);
+// primeNum variable will store the result of applying the filterByPrime function to numbers array (filtering through the array)
 
-console.log(primeNum)
-
-
-// We create a function identifyPrime(nums) to check whether a given number is prime or not
-// function filterByPrime takes an array of numbers as input and returns the new array of prime numbers
-// numbers is a variable representing an array declared by const keyword
-// primeNum variable will store the result of applying the filterByPrime function
-// to numbers array (filtering through the array)
-// console.log(primeNum) will log the prime number array containing the prime number to 
-// the console
-// nums <= 1 return false if input number is less than 1 or equal to it 
-// nums <= 3 return true if input is equal to or less than three
-// nums % 2 === 0 || nums % 3 === 0 return false if number is divisible by three and two
-// 
+console.log(numbers);
+// This returns array numbers.
+console.log(primeNum);
+// This returns a new array [2, 3, 5, 7] filtered from array numbers.
